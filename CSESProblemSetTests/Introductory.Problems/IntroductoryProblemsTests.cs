@@ -39,5 +39,16 @@ namespace CSESProblemSetTests.Introductory.Problems
             _testOutputHelper.WriteLine($"s: {s}");
             Assert.Equal(expected, Repetitions.Solve(s));
         }
+
+        [Theory]
+        [InlineData(4, "AAAACCCGGT")]
+        [InlineData(2, "CTCAGGTCCG")]
+        [InlineData(4, "ACCGGGTTTT")]
+        public void SolveLongestRepition_Tests(int expected, string s)
+        {
+            _testOutputHelper.WriteLine($"s: {s}");
+            Assert.Equal(expected, Repetitions.SolveLongestRepition(s));
+        }
     }
+
 }

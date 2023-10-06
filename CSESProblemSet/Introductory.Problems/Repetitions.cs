@@ -1,6 +1,41 @@
+using System.Runtime.InteropServices;
+
 public class Repetitions
 {
-     public static int Solve(string s)
+
+
+    // You are given a DNA sequence: a string consisting of characters A, C, G, and T. 
+    //Your task is to find the longest repetition in the sequence. 
+    // This is a maximum-length substring containing only one type of character.
+    public static int SolveLongestRepition(string s)
+    {
+        int max = 0;
+        char[] chars = s.ToCharArray();
+        char first = ' ';
+        int count = 1;
+        foreach (char c in chars)
+        {
+            if (c == first)
+            {
+                count++;
+            }
+            else
+            {
+                count = 1;
+            }
+            first = c;
+            max = Math.Max(max, count);
+
+        }
+
+
+        return max;
+    }
+
+
+
+
+    public static int Solve(string s)
     {
         int max = 0;
         char[] chars = s.ToCharArray();
